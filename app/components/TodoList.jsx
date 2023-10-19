@@ -3,7 +3,8 @@ import Link from "next/link";
 
 const TodoList = async () => {
   const data = await fetchData("", 0);
-  const task = data.tasks
+  // const task = data.tasks;
+  const task = data
   return (
     <>
       <main>
@@ -17,7 +18,7 @@ const TodoList = async () => {
             })}
           {!task && (
             <h1 className="text-3xl">
-              Create a 
+              Create a{" "}
               <Link
                 href={"/create"}
                 className="text-primary border-b-transparent border-b hover:border-b-primary"

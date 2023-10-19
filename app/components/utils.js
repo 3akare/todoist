@@ -1,5 +1,5 @@
 export const fetchData = async (at, time) => {
-  const res = await fetch(`https://www.jsonkeeper.com/b/DXI4`, {
+  const res = await fetch(`http://localhost:4000/tasks/${at}`, {
     next: { revalidate: time },
   });
   const data = await res.json();

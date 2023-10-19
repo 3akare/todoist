@@ -4,7 +4,7 @@ import { cutText } from ".";
 
 const TodoCard = ({ todo: { task, priority, id, description } }) => {
   return (
-    <div className="w-64 max-w-[16rem] h-fit min-h-[5rem] max-h-[7rem] p-2 m-2 bg-transparent rounded-lg flex items-center justify-center outline-border outline-[1px] outline hover:outline-[#7e7e7e] hover:shadow-lg transition-all duration-300">
+    <div className="w-64 max-md:w-full h-fit min-h-[5rem] max-h-[7rem] p-2 m-2 bg-transparent rounded-lg flex items-center justify-center outline-border outline-[1px] outline hover:outline-[#7e7e7e] hover:shadow-lg transition-all duration-300">
       <Link href={`/tasks/${id}`} className="w-4/5 h-full space-y-2">
         <div className="h-full space-y-1">
           <h1 className="text-sm h-1/4">

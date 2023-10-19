@@ -5,9 +5,9 @@ import Image from "next/image";
 const Page = async ({ params: { id } }) => {
   const data = await fetchData(`${id}`, 20);
   return (
-    <main className="space-y-32">
+    <main className="space-y-8 md:space-y-16">
       <section className="flex items-center justify-between h-fit">
-        <h1 className="text-3xl">{data.task}</h1>
+        <h1 className="text-3xl max-md:text-2xl">{data.task}</h1>
         <div
           className={`w-16 p-1 text-xs font-normal outline outline-[1.5px] rounded-md text-center ${String(
             data.priority
