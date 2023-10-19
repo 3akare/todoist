@@ -7,8 +7,8 @@ import plus from "../../public/plus.svg";
 
 const NavBar = () => {
   return (
-    <nav className="fixed w-screen h-12 bg-primary text-secondary flex items-center font-light text-sm bottom-0 md:top-0">
-      <div className="container mx-auto flex justify-between p-2">
+    <nav className="fixed w-screen h-20 md:h-12 bg-primary text-secondary flex items-center font-light text-sm bottom-0 md:top-0 z-[49]">
+      <div className="container mx-auto flex justify-between p-4">
         <Link
           href={"/"}
           className="p-[4px] rounded-sm hover:bg-black/20 transition duration-400"

@@ -7,10 +7,10 @@
     -webkit-tap-highlight-color: transparent;
   }
   main {
-    @apply container mx-auto mt-16 px-2;
+    @apply container mx-auto mt-8 px-2 md:mt-16;
   }
   h1 {
-    @apply h-12 text-lg font-semibold;
+    @apply h-12 text-2xl md:text-lg font-semibold;
   }
 }
 
@@ -25,3 +25,4 @@
 .high {
   @apply text-primary outline-primary;
 }
+
