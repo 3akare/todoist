@@ -7,7 +7,7 @@ import plus from "../../public/plus.svg";
 
 const NavBar = () => {
   return (
-    <nav className="fixed w-screen h-12 bg-primary text-secondary flex items-center font-light text-sm top-0">
+    <nav className="fixed w-screen h-12 bg-primary text-secondary flex items-center font-light text-sm bottom-0 md:top-0">
       <div className="container mx-auto flex justify-between p-2">
         <Link
           href={"/"}

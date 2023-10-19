@@ -36,7 +36,7 @@ const TodoList = async () => {
           )}
           <div className="fixed bottom-4 flex items-center justify-center w-full md:hidden">
             <Link href={"/create"}>
-              <div className="relative flex justify-center items-center w-14 h-14 bg-primary rounded-full shadow-md">
+              <div className="relative flex justify-center items-center w-14 h-14 bg-primary rounded-full shadow-md ring-2 ring-secondary">
                 <Image
                   src={plus}
                   width={30}
@@ -46,6 +46,7 @@ const TodoList = async () => {
               </div>
             </Link>
           </div>
+          <div className="h-24 invisible"></div>
         </section>
       </main>
     </>
