@@ -5,8 +5,13 @@ import Image from "next/image";
 
 const TodoList = async () => {
   const data = await fetchData("", 0);
-  // const task = data.tasks;
-  const task = data;
+  let task = "";
+  if (process.env.MODE === "production") {
+    task = data.tasks;
+  } else {
+    task = data;
+  }
+
   return (
     <>
       <main>
