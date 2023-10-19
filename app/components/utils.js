@@ -1,5 +1,12 @@
 export const fetchData = async (at, time) => {
-  const res = await fetch(`http://localhost:4000/tasks/${at}`, {
+  let URL = "";
+  if (process.env.MODE === "development") {
+    URL = `http://localhost:4000/tasks/${at}`;
+  } else {
+    URL = `https://www.jsonkeeper.com/b/D5VV`;
+  }
+  
+  const res = await fetch(URL, {
     next: { revalidate: time },
   });
   const data = await res.json();
