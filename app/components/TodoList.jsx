@@ -35,16 +35,14 @@ const TodoList = async () => {
         )}
         <Dialog />
         <div className="fixed bottom-12 flex items-center justify-center w-full md:hidden z-[100]">
-          <OpenDialog
-            children={
-              <Image
-                src={plus}
-                width={30}
-                height={30}
-                alt="create new task"
-              ></Image>
-            }
-          />
+          <OpenDialog>
+            <Image
+              src={plus}
+              width={30}
+              height={30}
+              alt="create new task"
+            ></Image>
+          </OpenDialog>
         </div>
         <div className="h-32 invisible"></div>
       </section>

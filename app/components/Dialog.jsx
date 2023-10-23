@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { Priority } from "./index";
+import Image from "next/image";
+
+import send from "../../public/send.svg";
+import close from "../../public/close.svg";
 
 const Dialog = () => {
   const [data, setData] = useState({
@@ -81,22 +85,26 @@ const Dialog = () => {
           <div>
             {data.description.length !== 0 && data.title.length !== 0 ? (
               <button
-                className="w-8 h-8 rounded-md bg-primary text-secondary"
+                className="w-8 h-8 rounded-md bg-primary text-secondary flex items-center justify-center"
                 onClick={() => {
                   dialogControl.close();
                 }}
               >
-                send
+                <Image
+                  src={send}
+                  alt={"send"}
+                  className="transition duration-300 hover:-rotate-12"
+                />
               </button>
             ) : (
               <div
-                className="w-8 h-8 rounded-md bg-secondary outline-[1px] outline-primary outline text-primary"
+                className="w-8 h-8 rounded-md bg-secondary outline-[1px] outline-primary outline text-primary flex justify-center items-center"
                 onClick={() => {
                   setData({ priority: "", description: "", title: "" });
                   dialogControl.close();
                 }}
               >
-                close
+                <Image src={close} alt={"close"} />
               </div>
             )}
           </div>
