@@ -3,7 +3,7 @@ import descImg from "./description.svg";
 import Image from "next/image";
 
 const Page = async ({ params: { id } }) => {
-  const data = await fetchData(`${id}`, 20);
+  const data = await fetchData(`${id}`, 0);
   return (
     <main className="space-y-8 md:space-y-16">
       <section className="flex items-center justify-between h-fit">
@@ -22,7 +22,8 @@ const Page = async ({ params: { id } }) => {
           <h2 className="text-slate-500 text-sm">Description</h2>
         </div>
         <div className="h-32 min-h-[128px] max-h-fit">
-          <p className="p-2 m-2">{data.description}</p>
+          <p className="p-2 m-2 break-words">{data.description}</p>
+          <div className="h-24 invisible text-black"></div>
         </div>
       </section>
     </main>

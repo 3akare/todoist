@@ -3,7 +3,9 @@ import Link from "next/link";
 
 //svgs
 import home from "../../public/home.svg";
-import plus from "../../public/plus.svg";
+
+//components
+import { NavBarButton } from "@/app/components";
 
 const NavBar = () => {
   return (
@@ -15,12 +17,7 @@ const NavBar = () => {
         >
           <Image src={home} alt="Home" width={28} />
         </Link>
-        <Link
-          href={"/create"}
-          className="p-[4px] rounded-sm hover:bg-black/20 transition duration-400"
-        >
-          <Image src={plus} alt="Add Task" width={28} />
-        </Link>
+        <NavBarButton />
       </div>
     </nav>
   );

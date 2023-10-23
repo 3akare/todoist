@@ -1,4 +1,4 @@
-import { TodoCard, fetchData } from "@/app/components";
+import { TodoCard, fetchData, Dialog, OpenDialog } from "@/app/components";
 import plus from "../../public/plus.svg";
 import Link from "next/link";
 import Image from "next/image";
@@ -33,17 +33,18 @@ const TodoList = async () => {
             </Link>
           </h1>
         )}
+        <Dialog />
         <div className="fixed bottom-12 flex items-center justify-center w-full md:hidden z-[100]">
-          <Link href={"/create"}>
-            <div className="relative flex justify-center items-center w-16 h-16 bg-primary rounded-full shadow-md ring-2 ring-secondary">
+          <OpenDialog
+            children={
               <Image
                 src={plus}
                 width={30}
                 height={30}
                 alt="create new task"
               ></Image>
-            </div>
-          </Link>
+            }
+          />
         </div>
         <div className="h-32 invisible"></div>
       </section>

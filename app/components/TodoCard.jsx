@@ -5,12 +5,6 @@ import { cutText } from ".";
 const TodoCard = ({ todo: { task, priority, id, description } }) => {
   return (
     <div className="w-64 max-md:w-full h-fit min-h-[5rem] max-h-[7rem] p-2 m-2 bg-transparent rounded-lg flex items-center justify-center outline-border outline-[1px] outline hover:outline-[#7e7e7e] hover:shadow-lg transition-all duration-300 relative z-10">
-      <input
-        type="checkbox"
-        name=""
-        id=""
-        className="absolute top-5 left-4 md:top-2 md:left-2"
-      />
       <Link href={`/tasks/${id}`} className="w-4/5 h-full space-y-2">
         <div className="h-full space-y-1">
           <h1 className="text-sm h-1/4">
@@ -29,6 +23,11 @@ const TodoCard = ({ todo: { task, priority, id, description } }) => {
           </small>
         </div>
       </Link>
+      <button className="self-start flex gap-1 p-2 m-1 pt-0">
+        <div className="w-1 h-1 bg-primary rounded-full"></div>
+        <div className="w-1 h-1 bg-primary rounded-full"></div>
+        <div className="w-1 h-1 bg-primary rounded-full"></div>
+      </button>
     </div>
   );
 };
