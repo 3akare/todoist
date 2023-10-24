@@ -38,7 +38,7 @@ const Dialog = () => {
       className="w-[90%] outline outline-border rounded-md outline-1 max-w-2xl"
     >
       <form
-        className="container mx-auto flex flex-col items-start justify-center w-full p-2 space-y-4 max-w-3xl "
+        className="container mx-auto flex flex-col items-start justify-center w-full p-2 space-y-2 md:space-y-4 max-w-3xl "
         onSubmit={handleSubmit}
         name="taskForm"
       >
@@ -49,7 +49,7 @@ const Dialog = () => {
           type="text"
           placeholder="Task Name"
           id="title"
-          className="indent-1 focus-within:outline-none focus-visible:outline-none w-full h-14 text-xl"
+          className="indent-1 focus-within:outline-none focus-visible:outline-none w-full h-6 text-xl"
           value={data.title}
           onChange={handleChange}
           autoFocus
@@ -61,9 +61,9 @@ const Dialog = () => {
         <textarea
           name="description"
           id="description"
-          cols="30"
-          rows="10"
-          className="w-full resize-none indent-2 focus-within:outline-none focus-visible:outline-none font-light text-sm"
+          cols="1"
+          rows="3"
+          className="w-full resize-none box-border p-2 focus-within:outline-none focus-visible:outline-none font-light text-sm"
           placeholder="Description"
           value={data.description}
           onChange={handleChange}
@@ -98,13 +98,13 @@ const Dialog = () => {
               </button>
             ) : (
               <div
-                className="w-8 h-8 rounded-md bg-secondary outline-[1px] outline-primary outline text-primary flex justify-center items-center"
+                className="w-8 h-8 rounded-md bg-secondary outline-[1px] outline-primary outline text-primary flex justify-center items-center cursor-pointer"
                 onClick={() => {
                   setData({ priority: "", description: "", title: "" });
                   dialogControl.close();
                 }}
               >
-                <Image src={close} alt={"close"} />
+                <Image src={close} alt={"close"} className="transition hover:rotate-90" />
               </div>
             )}
           </div>

@@ -41,7 +41,8 @@ const TodoList = async () => {
               width={30}
               height={30}
               alt="create new task"
-            ></Image>
+              className="cursor-pointer"
+            />
           </OpenDialog>
         </div>
         <div className="h-32 invisible"></div>
