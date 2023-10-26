@@ -35,7 +35,7 @@ const Dialog = () => {
   return (
     <dialog
       id="dialogControl"
-      className="w-[90%] outline outline-border rounded-md outline-1 max-w-2xl"
+      className="w-[90%] outline outline-border rounded-md outline-1 max-w-2xl mt-24 transition"
     >
       <form
         className="container mx-auto flex flex-col items-start justify-center w-full p-2 space-y-2 md:space-y-4 max-w-3xl "

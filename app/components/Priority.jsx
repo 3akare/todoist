@@ -12,8 +12,9 @@ const Priority = ({ handleClick, priority, current }) => {
     <div
       className={`w-6 h-6 outline outline-[1px] rounded-md flex items-center justify-center z-1 ${color}`}
       id={priority}
+      onClick={handleClick}
     >
-      <PhFlag className={`text-inherit`} onClick={handleClick} id={priority} />
+      <PhFlag className={`text-inherit m-1`} id={priority} />
     </div>
   );
 };
