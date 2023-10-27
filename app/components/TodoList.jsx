@@ -1,9 +1,10 @@
+"use client";
 import { TodoCard, Dialog, OpenDialog } from "@/app/components";
 import plus from "../../public/plus.svg";
 import Link from "next/link";
 import Image from "next/image";
 
-const TodoList = ({data}) => {
+const TodoList = ({ data }) => {
   return (
     <main>
       <section>
