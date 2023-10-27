@@ -15,7 +15,7 @@ const NavBar = () => {
           href={"/"}
           className="p-[4px] rounded-sm hover:bg-black/20 transition duration-400"
         >
-          <Image src={home} alt="Home" width={28} />
+          <Image src={home} alt="Home" width={28} priority/>
         </Link>
         <NavBarButton />
       </div>

@@ -1,28 +1,19 @@
-import { TodoCard, fetchData, Dialog, OpenDialog } from "@/app/components";
+import { TodoCard, Dialog, OpenDialog } from "@/app/components";
 import plus from "../../public/plus.svg";
 import Link from "next/link";
 import Image from "next/image";
 
-const TodoList = async () => {
-  const data = await fetchData("", 0);
-  let task = "";
-  if (process.env.MODE === "production") {
-    task = data.tasks;
-  } else {
-    task = data;
-  }
-
+const TodoList = ({data}) => {
   return (
     <main>
       <section>
         <h1>Inbox</h1>
       </section>
       <section className="grid gap-1 grid-cols-fluid justify-items-center items-center max-sm:place-items-center">
-        {task &&
-          task.map((data) => {
-            return <TodoCard key={data.id} todo={data} />;
-          })}
-        {!task && (
+        {data[0]?.tasks.map((item) => {
+          return <TodoCard key={item.id} todo={item} />;
+        })}
+        {!data && (
           <h1 className="text-3xl">
             Create a{" "}
             <Link
