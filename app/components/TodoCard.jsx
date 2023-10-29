@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { PhFlag } from ".";
-import { cutText } from ".";
+import { PhFlag, cutText, DeleteButton } from ".";
 
 const TodoCard = ({ todo: { task, priority, id, description } }) => {
   return (
@@ -23,11 +22,7 @@ const TodoCard = ({ todo: { task, priority, id, description } }) => {
           </small>
         </div>
       </Link>
-      <button className="self-start flex gap-1 p-2 m-1 pt-0">
-        <div className="w-1 h-1 bg-primary rounded-full"></div>
-        <div className="w-1 h-1 bg-primary rounded-full"></div>
-        <div className="w-1 h-1 bg-primary rounded-full"></div>
-      </button>
+      <DeleteButton id={id} />
     </div>
   );
 };

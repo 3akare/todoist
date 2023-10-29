@@ -5,6 +5,8 @@ import Image from "next/image";
 
 import send from "../../public/send.svg";
 import close from "../../public/close.svg";
+import { updateDoc, doc, arrayUnion, getDoc } from "firebase/firestore";
+import { database } from "../backend";
 
 const Dialog = () => {
   const [data, setData] = useState({
@@ -26,9 +28,31 @@ const Dialog = () => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(data);
+    const documentRef = doc(database, "todoist-test", "Nvg01m8MW7gCmqjAIpCH");
+
+    // Fetch the document data
+    const documentSnapshot = await getDoc(documentRef);
+    const docData = documentSnapshot.data();
+
+    // Calculate the new size by incrementing the current size by 1
+    const newSize = docData.tasks.length + 1;
+
+    // Create the new object
+    const newObject = {
+      id: newSize.toString(),
+      view: true,
+      priority: data.priority,
+      description: data.description,
+      task: data.title,
+    };
+
+    // Use updateDoc to add the new object to the 'tasks' array
+    updateDoc(documentRef, {
+      tasks: arrayUnion(newObject),
+    });
+
     setData({ priority: "", description: "", title: "" });
   };
 
@@ -104,7 +128,11 @@ const Dialog = () => {
                   dialogControl.close();
                 }}
               >
-                <Image src={close} alt={"close"} className="transition hover:rotate-90" />
+                <Image
+                  src={close}
+                  alt={"close"}
+                  className="transition hover:rotate-90"
+                />
               </div>
             )}
           </div>

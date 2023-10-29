@@ -6,5 +6,5 @@ export { default as Priority } from "./Priority";
 export { default as Dialog } from "./Dialog";
 export { default as OpenDialog } from "./OpenDialog";
 export { default as TodoHolder } from "./TodoHolder";
-export { NavBarButton } from "./Buttons";
+export { NavBarButton, DeleteButton } from "./Buttons";
 export { fetchData, cutText } from "./utils";
