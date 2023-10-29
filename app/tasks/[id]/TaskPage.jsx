@@ -1,5 +1,8 @@
+import { Dialog, OpenDialog } from "@/app/components";
+import plus from "../../../public/plus.svg";
 import descImg from "./description.svg";
 import Image from "next/image";
+
 const TaskPage = ({ data, num }) => {
   return (
     <main className="space-y-8 md:space-y-16">
@@ -25,6 +28,18 @@ const TaskPage = ({ data, num }) => {
           <div className="h-24 invisible text-black"></div>
         </div>
       </section>
+      <Dialog />
+      <div className="fixed bottom-12 flex items-center justify-center w-full md:hidden z-[100]">
+        <OpenDialog>
+          <Image
+            src={plus}
+            width={30}
+            height={30}
+            alt="create new task"
+            className="cursor-pointer"
+          />
+        </OpenDialog>
+      </div>
     </main>
   );
 };

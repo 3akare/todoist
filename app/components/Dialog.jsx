@@ -7,6 +7,7 @@ import send from "../../public/send.svg";
 import close from "../../public/close.svg";
 import { updateDoc, doc, arrayUnion, getDoc } from "firebase/firestore";
 import { database } from "../backend";
+import { useRouter } from "next/navigation";
 
 const Dialog = () => {
   const [data, setData] = useState({
@@ -15,6 +16,7 @@ const Dialog = () => {
     priority: "",
   });
 
+  const router = useRouter();
   const priorityArray = ["high", "moderate", "low"];
   const handleChange = (event) => {
     setData((oldData) => {
@@ -52,7 +54,7 @@ const Dialog = () => {
     updateDoc(documentRef, {
       tasks: arrayUnion(newObject),
     });
-
+    router.push("/");
     setData({ priority: "", description: "", title: "" });
   };
 
